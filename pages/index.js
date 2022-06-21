@@ -3,13 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-const editable = (session, item) => {
-  console.log("Session %s", session);
-  console.log("Item %s", item);
-  return { canDo: Boolean(session && item) };
-};
-
 const TestComponent = ({ session, item }) => {
+  const editable = (session, item) => {
+    console.log("Session %s", session);
+    console.log("Item %s", item);
+    return { canDo: Boolean(session && item) };
+  };
+
   const [editorStatus, setEditorStatus] = useState({
     canEdit: editable(session, item),
     canSave: editable(session, item),
